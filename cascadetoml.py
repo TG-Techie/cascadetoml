@@ -160,7 +160,7 @@ def filter_toml(
     acceptable values for the given keys."""
     root_toml = root / ".cascade.toml"
     if not root_toml.exists():
-        raise ValueError("Missing root .cascade.toml")
+        raise ValueError("Missing root .cascade.toml in directory: {}".format(root))
 
     template = list(root.glob("*.template.toml"))
     if not template or len(template) > 1:
